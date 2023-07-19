@@ -30,6 +30,13 @@ Request header에 요청 날짜를 저장하여 유효한 캐시 여부를 판�
 
 ![ezgif com-video-to-gif](https://github.com/m4nd4r1n/pre-onboarding-11th-4/assets/96206089/fe8735cd-eaf2-43e7-bfa5-aa922bfbfac1)
 
+### API 호출 최적화
+
+debounce를 이용하여 API 호출 최적화
+
+[debounce 코드](https://github.com/m4nd4r1n/pre-onboarding-11th-4/blob/main/src/libs/debounce.ts)
+[적용 코드](https://github.com/m4nd4r1n/pre-onboarding-11th-4/blob/main/src/components/SearchBar.tsx#L63)
+
 ### 검색어 이동
 
 키보드 위, 아래 방향키로 검색어 이동
