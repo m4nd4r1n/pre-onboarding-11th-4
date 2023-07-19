@@ -1,5 +1,12 @@
+import Layout from './components/Layout';
+import Search from './components/Search';
+
 const App = () => {
-  return <></>;
+  return (
+    <Layout>
+      <Search />
+    </Layout>
+  );
 };
 
 export default App;
