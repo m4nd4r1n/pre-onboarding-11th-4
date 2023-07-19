@@ -36,6 +36,20 @@ const SearchBar = () => {
     }
   };
 
+  const keyDownMap = {
+    ArrowUp: () => dispatch(decreaseCurrentIndex()),
+    ArrowDown: () => dispatch(increaseCurrentIndex()),
+  } as const;
+
+  const isKeyInMap = (key: string): key is keyof typeof keyDownMap => key in keyDownMap;
+
+  const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
+    const { key } = e;
+    if (e.nativeEvent.isComposing || !isKeyInMap(key)) return;
+    e.preventDefault();
+    keyDownMap[key]();
+  };
+
   return (
     <div className='flex h-12 items-center rounded-3xl bg-white outline-secondary focus-within:outline'>
       <MagnifyingGlassIcon className='mx-4 w-6 select-none' />
@@ -43,6 +57,7 @@ const SearchBar = () => {
         type='text'
         placeholder='질환명을 입력해 주세요.'
         onChange={onInputChange}
+        onKeyDown={onKeyDown}
         className='h-full flex-1 outline-none'
       />
       <button className='h-full rounded-r-3xl bg-secondary px-6 text-white'>검색</button>
