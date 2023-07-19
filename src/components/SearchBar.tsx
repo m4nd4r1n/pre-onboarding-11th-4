@@ -13,7 +13,12 @@ import {
   startLoading,
 } from '@/reducer/suggestion';
 
-const SearchBar = () => {
+interface SearchProps {
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+}
+
+const SearchBar: React.FC<SearchProps> = (props) => {
   const dispatch = useSuggestionDispatch();
 
   const onInputChange: React.ChangeEventHandler<HTMLInputElement> = async (e) => {
@@ -57,6 +62,7 @@ const SearchBar = () => {
         placeholder='질환명을 입력해 주세요.'
         onChange={debounce(onInputChange, 500)}
         onKeyDown={onKeyDown}
+        {...props}
         className='h-full flex-1 outline-none'
       />
       <button className='h-full rounded-r-3xl bg-secondary px-6 text-white'>검색</button>
