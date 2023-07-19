@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon } from './Icons';
 
-import { API } from '@/constants/api';
 import { useSuggestionDispatch } from '@/hooks/useSuggestionDispatch';
+import { ApiCache } from '@/libs/cache';
 import { debounce } from '@/libs/debounce';
 import {
   decreaseCurrentIndex,
@@ -25,9 +25,7 @@ const SearchBar = () => {
 
     try {
       dispatch(startLoading());
-      const suggestions = await (
-        await fetch(`${API.BASE_URL}/sick?q=${encodeURIComponent(keyword)}`)
-      ).json();
+      const suggestions = await ApiCache.getSuggestionByKeyword(keyword);
       dispatch(setSuggestionsBy(suggestions));
     } catch (e) {
       console.error(e);
