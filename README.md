@@ -28,7 +28,7 @@ Request header에 요청 날짜를 저장하여 유효한 캐시 여부를 판�
 
 [코드](https://github.com/m4nd4r1n/pre-onboarding-11th-4/blob/main/src/libs/cache.ts)
 
-![](https://github.com/m4nd4r1n/pre-onboarding-11th-4/assets/96206089/912da060-6cd0-4701-aa0b-4e967a68a0f1)
+![ezgif com-video-to-gif](https://github.com/m4nd4r1n/pre-onboarding-11th-4/assets/96206089/fe8735cd-eaf2-43e7-bfa5-aa922bfbfac1)
 
 ### 검색어 이동
 
@@ -36,4 +36,4 @@ Request header에 요청 날짜를 저장하여 유효한 캐시 여부를 판�
 
 [코드](https://github.com/m4nd4r1n/pre-onboarding-11th-4/blob/main/src/components/SearchBar.tsx#L43-L55)
 
-![](https://github.com/m4nd4r1n/pre-onboarding-11th-4/assets/96206089/559dc9f0-4277-4ab1-a3ba-5e033aea8b89)
+![ezgif com-video-to-gif (1)](https://github.com/m4nd4r1n/pre-onboarding-11th-4/assets/96206089/29d28237-8a14-4615-83b7-8acbdf0cedd2)
