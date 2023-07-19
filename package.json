@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite --port 3000\" \"json-server --watch db.json --port 4000\"",
+    "dev": "concurrently \"npm run dev:client\" \"json-server --watch db.json --port 4000\"",
+    "dev:client": "vite --port 3000",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "npm run build && concurrently \"vite preview --port 3000\" \"json-server --watch db.json --port 4000\""
+    "preview": "vite preview --port 3000",
+    "start": "npm run build && concurrently \"npm run preview\" \"json-server --watch db.json --port 4000\"",
+    "start:client": "npm run build && vite preview --port 3000"
   },
   "dependencies": {
     "react": "^18.2.0",
