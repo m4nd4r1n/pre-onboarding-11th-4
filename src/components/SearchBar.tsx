@@ -2,6 +2,7 @@ import { MagnifyingGlassIcon } from './Icons';
 
 import { API } from '@/constants/api';
 import { useSuggestionDispatch } from '@/hooks/useSuggestionDispatch';
+import { debounce } from '@/libs/debounce';
 import {
   decreaseCurrentIndex,
   endLoading,
@@ -56,7 +57,7 @@ const SearchBar = () => {
       <input
         type='text'
         placeholder='질환명을 입력해 주세요.'
-        onChange={onInputChange}
+        onChange={debounce(onInputChange, 500)}
         onKeyDown={onKeyDown}
         className='h-full flex-1 outline-none'
       />
